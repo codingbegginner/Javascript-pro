@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Guess The number Game</title>
+	<link href="https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap" rel="stylesheet">
 </head>
 <body>
 	<main>
@@ -28,9 +29,131 @@
 			</section>
 			<section>
 				<p>Current range: </p>
-				<span>1-100</span>
+				<span id="rangeOutpur">1-100</span>
+				<div id="range">
+				<span id="low"></span>
+				<span id="space"></span>
+				<span id="high"></span>
+				</div>
+			</section>
+			<section class="stats">
+				<div class="info">
+					<p>Number of previous attempts:</p>
+					<span id="attempts">0</span>
+				</div>
+				<div class="info">
+					<p>Your previous guesses:</p>
+					<span id="guesses">0</span>
+				</div>
 			</section>
 		</div>
 	</main>
+	<style type="text/css">
+		:root{
+			--green:#f30000;
+			--red:#00f334;
+			--background:#f8f1e9;
+			--gradient-1:#f30000;
+			--gradient-2:#00f334;
+		}
+
+		html{
+				font-family: 'Neonderthaw', cursive;
+		font-size: 30px;
+		color:  #5bf1ff;
+		font-weight: bolder;	
+		padding: 0;
+		}
+
+		body{
+			width: 90vw;
+			margin: auto;
+			background: linear-gradient(var(--gradient-1),var(--gradient-2))
+		}
+
+		main{
+			text-align: center;
+			background-color: var(--background);
+			border: solid #ef7b54;
+			border-width: 0 8px 8px 8px;
+			min-height: 80vh;
+			border-radius: 0 0 3rem 3rem;
+			padding: 1rem;
+			color: 1f2933
+		}
+
+		h2{
+			font-size: 2.2rem;
+			margin: 8rem ;
+		}
+		p{
+			font-size: 2rem;
+		}
+		button{
+				font-family: 'Neonderthaw', cursive;
+		font-size: 30px;
+		color:  #5bf1ff;
+		font-weight: bolder;
+		border: none;
+		cursor: pointer;	
+		background:var(--green);
+		padding: 2rem;
+		border-radius: 1rem 1rem 0 0;
+		}
+
+		button:last-child{
+			background: var(--red);
+			color: #f30000;
+			border-radius: 0 0 1rem 1rem;
+		}
+		.button-wrapper{
+			display: flex;
+			flex-direction: column;
+		}
+
+		input{
+			border: 1px dashed var(--green)
+			background:transparent;
+			margin: 2rem 0;
+			padding: 1rem 0;
+			width: 16rem;
+			text-align: center;
+		}
+		.range{
+			display: flex;
+			background: var(--green);
+			height: 50px;
+			padding: 0;
+			margin: 0 0 4rem 0;
+		}
+
+		#rangeOutput{
+			font-size: 1.6rem;
+		}
+
+		.stats{
+			text-align: left;
+		}
+
+		.info{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.info span{
+			font-size: 1.6rem;
+		}
+
+		#newGameButton{
+			border-radius: 0;
+		}
+
+		@media (min-width: 800px) {
+			body{
+				width: 80vw;
+			}
+		}
+	</style>
 </body>
 </html>
